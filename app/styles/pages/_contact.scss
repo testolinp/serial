@@ -1,0 +1,10 @@
+.contact {
+  @include size(100% 100vh);
+  background: $secondary-color;
+
+  &__content {
+    @include position(relative, null null null null);
+    @include size(100%);
+    @include padding(rem(70) null null);
+  }
+}

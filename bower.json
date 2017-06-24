@@ -1,0 +1,6 @@
+{
+  "name": "serial",
+  "dependencies": {
+    "bourbon": "4.2.6"
+  }
+}

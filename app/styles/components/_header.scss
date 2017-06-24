@@ -1,0 +1,23 @@
+.hd {
+  @include position(fixed, 0 null null 0);
+  @include size(100% rem(60));
+  z-index: 10;
+  background: blue;
+
+  &__content {
+    @include clearfix;
+    @include padding(rem(13) rem(20) null);
+  }
+
+  &__lg {
+    float: left;
+    @include size(rem(100) rem(35));
+    background: red;
+  }
+
+  &__hamb {
+    float: right;
+    @include size(rem(35));
+    background: red;
+  }
+}

@@ -1,0 +1,21 @@
+@import "bourbon";
+
+//Global
+@import "reset";
+@import "mixin";
+@import "fonts";
+@import "vars";
+@import "animations";
+
+//Pages
+@import "pages/home";
+@import "pages/work";
+@import "pages/services";
+@import "pages/contact";
+
+//Components
+@import "components/header";
+
+html, body {
+  @include size(100vw 100vh);
+}
