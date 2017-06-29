@@ -4,10 +4,10 @@
     <div class="hd__hamb" {{action 'openCloseOverlay'}}></div>
     <nav class="hd__nav">
       <ul class="hd__nav__list">
-        <li class="hd__nav__list__item"><a href="#">{{t "menu.about"}}</a></li>
-        <li class="hd__nav__list__item"><a href="#">{{t "menu.work"}}</a></li>
-        <li class="hd__nav__list__item"><a href="#">{{t "menu.services"}}</a></li>
-        <li class="hd__nav__list__item"><a href="#">{{t "menu.contact"}}</a></li>
+        <li class="hd__nav__list__item"><a href="#" {{action 'goToSlide' 0}}>{{t "menu.about"}}</a></li>
+        <li class="hd__nav__list__item"><a href="#" {{action 'goToSlide' 1}}>{{t "menu.work"}}</a></li>
+        <li class="hd__nav__list__item"><a href="#" {{action 'goToSlide' 2}}>{{t "menu.services"}}</a></li>
+        <li class="hd__nav__list__item"><a href="#" {{action 'goToSlide' 3}}>{{t "menu.contact"}}</a></li>
       </ul>
     </nav>
   </div>
@@ -29,9 +29,9 @@
 <div class="overlay {{if showOverlay 'overlay--show' ''}}">
   <a href="#" class="overlay__close" {{action 'openCloseOverlay'}}></a>
   <ul class="overlay__list">
-    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">{{t "menu.about"}}</a></li>
-    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">{{t "menu.work"}}</a></li>
-    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">{{t "menu.services"}}</a></li>
-    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">{{t "menu.contact"}}</a></li>
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link" {{action 'menuGoToSlide' 0}}>{{t "menu.about"}}</a></li>
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link" {{action 'menuGoToSlide' 1}}>{{t "menu.work"}}</a></li>
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link" {{action 'menuGoToSlide' 2}}>{{t "menu.services"}}</a></li>
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link" {{action 'menuGoToSlide' 3}}>{{t "menu.contact"}}</a></li>
   </ul>
 </div>

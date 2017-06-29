@@ -47,31 +47,42 @@ export default Ember.Controller.extend({
       // Ember.$('.home__dots li').eq(this.get('slide.index')).addClass('home__dots__item--active');
     },
 
-    // goToSlide(index) {
-    //   //console.log('index',this.get('slide.index'),index);
-    //   if(this.get('slide.index') === index) { return; }
-    //   Ember.$('.home__dots li').removeClass('home__dots__item--active');
-    //   Ember.$('.home__dots li').eq(index).addClass('home__dots__item--active');
-    //
-    //   // TODO: Go to Slide.
-    //   if(index === '99999') {
-    //     Ember.$('.home__slider__box').removeClass('home__slider__box--show-in home__slider__box--current').addClass('home__slider__box--show-out');
-    //     Ember.$('.home__dots li').eq(-1).addClass('home__dots__item--active');
-    //     this.set('slide.index',this.get('slide.total'));
-    //   } else if (index < this.get('slide.index')) {
-    //     //console.log('BACK');
-    //       Ember.$('.home__slider__box').eq(this.get('slide.index')).removeClass('home__slider__box--show-in home__slider__box--current');
-    //       this.set('slide.index',index);
-    //       Ember.$('.home__slider__box').eq(this.get('slide.index')).removeClass('home__slider__box--show-out').addClass('home__slider__box--current');
-    //       for(var i=index ; i< this.get('slide.total') ; i++) { Ember.$('.home__slider__box').eq(i).removeClass('home__slider__box--show-out'); }
-    //   } else {
-    //     //console.log('FORWARD');
-    //       for(var e=0 ; e< (index) ; e++) { Ember.$('.home__slider__box').eq(e).addClass('home__slider__box--show-out'); }
-    //       Ember.$('.home__slider__box').eq(this.get('slide.index')).addClass('home__slider__box--show-out').removeClass('home__slider__box--show-in home__slider__box--current');
-    //       this.set('slide.index', index);
-    //       Ember.$('.home__slider__box').eq(this.get('slide.index')).addClass('home__slider__box--show-in home__slider__box--current').removeClass('home__slider__box--show-out');
-    //   }
-    // },
+    goToSlide(index) {
+      if(Ember.$('.dots__list__item').hasClass('dots__list__item--active')) {
+        Ember.$('.dots__list__item').removeClass('dots__list__item--active');
+      }
+      Ember.$('.hd').removeClass().addClass('hd');
+      Ember.$('.footer').removeClass().addClass('footer');
+      Ember.$('.dots').removeClass().addClass('dots');
+
+      //console.log('index',this.get('slide.index'),index);
+      if(this.get('slide.index') === index) { return; }
+      // Ember.$('.home__dots li').removeClass('home__dots__item--active');
+      // Ember.$('.home__dots li').eq(index).addClass('home__dots__item--active');
+
+      // TODO: Go to Slide.
+      if(index === '99999') {
+        Ember.$('.slide').removeClass('slide--show-in slide--current').addClass('slide--show-out');
+        //Ember.$('.home__dots li').eq(-1).addClass('home__dots__item--active');
+        this.set('slide.index',this.get('slide.total'));
+      } else if (index < this.get('slide.index')) {
+        //console.log('BACK');
+          Ember.$('.slide').eq(this.get('slide.index')).removeClass('slide--show-in slide--current');
+          this.set('slide.index',index);
+          Ember.$('.slide').eq(this.get('slide.index')).removeClass('slide--show-out').addClass('slide--current');
+          for(var i=index ; i< this.get('slide.total') ; i++) { Ember.$('.slide').eq(i).removeClass('slide--show-out'); }
+      } else {
+        //console.log('FORWARD');
+          for(var e=0 ; e< (index) ; e++) { Ember.$('.slide').eq(e).addClass('slide--show-out'); }
+          Ember.$('.slide').eq(this.get('slide.index')).addClass('slide--show-out').removeClass('slide--show-in slide--current');
+          this.set('slide.index', index);
+          Ember.$('.slide').eq(this.get('slide.index')).addClass('slide--show-in slide--current').removeClass('slide--show-out');
+      }
+
+      Ember.$('.hd').addClass('hd--' + this.get('slide.index'));
+      Ember.$('.footer').addClass('footer--' + this.get('slide.index'));
+      Ember.$('.dots').addClass('dots--' + this.get('slide.index'));
+    },
 
     showSlider() {
       this.set('slide.show', true);
