@@ -15,7 +15,21 @@
 
 //Components
 @import "components/header";
+@import "components/overlay";
 
 html, body {
   @include size(100vw 100vh);
+  overflow: hidden;
+}
+
+.slide {
+  @include transition(top 1.2s ease-in-out);
+
+  &--current {
+    height: calc(100vh);
+  }
+
+  &--show-out {
+    top: -100vh;
+  }
 }

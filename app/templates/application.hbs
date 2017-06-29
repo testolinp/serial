@@ -1,7 +1,18 @@
 <header class="hd">
   <div class="hd__content">
     <div class="hd__lg"></div>
-    <div class="hd__hamb"></div>
+    <div class="hd__hamb" {{action 'openCloseOverlay'}}></div>
   </div>
 </header>
+
 {{outlet}}
+
+<div class="overlay {{if showOverlay 'overlay--show' ''}}">
+  <a href="#" class="overlay__close" {{action 'openCloseOverlay'}}></a>
+  <ul class="overlay__list">
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">About</a></li>
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">Work</a></li>
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">Services</a></li>
+    <li class="overlay__list__item"><a href="#" class="overlay__list__item__link">Contact</a></li>
+  </ul>
+</div>

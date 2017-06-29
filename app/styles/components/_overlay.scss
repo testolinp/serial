@@ -1,0 +1,39 @@
+.overlay {
+  @include position(fixed, 0 null null 0);
+  z-index: 200;
+  @include size(100% 100vh);
+  background: rgba(0, 0, 0, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  @include transition(opacity 0.3s ease-in-out);
+
+  &--show {
+    opacity: 1;
+    pointer-events: inherit;
+  }
+
+  &__close {
+    display: block;
+    @include position(absolute, rem(19) rem(19) null null);
+    @include size(rem(25));
+    background: url('/images/close.png') center center no-repeat;
+    background-size: rem(18);
+  }
+
+  &__list {
+    @include position(fixed, 50% null null 0);
+    @include transform(translateY(-50%));
+    @include size(100% auto);
+
+    &__item {
+      @include padding(rem(15) null);
+      text-align: center;
+
+      &__link {
+        font-family: $gotham-light;
+        font-size: rem(38);
+        color: $secondary-color;
+      }
+    }
+  }
+}

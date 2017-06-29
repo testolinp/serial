@@ -1,10 +1,39 @@
 .services {
+  @include position(absolute, 0 null null 0);
   @include size(100% 100vh);
   background: $main-color;
+  z-index: 18;
 
   &__content {
-    @include position(relative, null null null null);
-    @include size(100%);
-    @include padding(rem(70) null null);
+    @include position(absolute, 50% null null 0);
+    @include transform(translateY(-50%));
+    @include size(100% auto);
+    @include padding(rem(70) rem(20) null);
+
+    &__title {
+      font-family: $gotham-medium;
+      font-size: rem(30);
+      line-height: rem(30);
+      color: $secondary-color;
+      word-wrap: break-word;
+
+      @include breakpoint('small-extra') {
+        font-size: rem(40);
+        line-height: rem(44);
+      }
+    }
+
+    &__description {
+      @include padding(rem(30) null null null);
+
+      font-family: $gotham-light;
+      font-size: rem(14);
+      line-height: rem(17);
+      color: $secondary-color;
+
+      @include breakpoint('small-extra') {
+        @include padding(rem(50) null null null);
+      }
+    }
   }
 }
