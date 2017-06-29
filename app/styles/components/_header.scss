@@ -6,6 +6,10 @@
   &__content {
     @include clearfix;
     @include padding(rem(13) rem(20) null);
+
+    @include breakpoint('large') {
+      @include padding(rem(20) rem(35) null);
+    }
   }
 
   &__lg {
@@ -15,6 +19,10 @@
     background-size: contain;
     @include filter(brightness(1));
     @include transition(all 0.3s ease-in-out 0.3s);
+
+    @include breakpoint('large') {
+      @include size(rem(280) rem(100));
+    }
   }
 
   &__hamb {
@@ -25,6 +33,39 @@
     background-size: contain;
     @include filter(brightness(1));
     @include transition(all 0.3s ease-in-out 0.3s);
+
+    @include breakpoint('large') {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    float: left;
+    @include padding(rem(10) null null rem(120));
+
+    @include breakpoint('large') {
+      display: block;
+    }
+
+    &__list {
+      @include clearfix;
+
+      &__item {
+        float: left;
+        @include padding(null rem(110) null null);
+
+        a {
+          @include filter(brightness(1));
+          @include transition(all 0.3s ease-in-out 0.3s);
+
+          font-family: $gotham-medium;
+          font-size: rem(13);
+          color: $secondary-color;
+          text-transform: lowercase;
+        }
+      }
+    }
   }
 
   &--1,
@@ -32,6 +73,12 @@
     .hd__lg,
     .hd__hamb {
       @include filter(brightness(0));
+    }
+
+    .hd__nav__list__item {
+      a {
+        @include filter(brightness(0));
+      }
     }
   }
 }

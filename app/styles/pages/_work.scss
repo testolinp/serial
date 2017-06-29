@@ -9,6 +9,13 @@
     @include size(100% auto);
     @include padding(rem(70) rem(20) null);
 
+    @include breakpoint('large') {
+      top: rem(160);
+      left: rem(430);
+      bottom: inherit;
+      @include padding(0 0 null);
+    }
+
     &__title {
       font-family: $gotham-medium;
       font-size: rem(30);
@@ -19,6 +26,17 @@
       @include breakpoint('small-extra') {
         font-size: rem(40);
         line-height: rem(44);
+      }
+
+      @include breakpoint('medium') {
+        max-width: 70%;
+
+        font-size: rem(50);
+        line-height: rem(51);
+      }
+
+      @include breakpoint('large') {
+        max-width: 60%;
       }
     }
 
@@ -32,6 +50,21 @@
 
       @include breakpoint('small-extra') {
         @include padding(rem(50) null null null);
+      }
+
+      @include breakpoint('medium') {
+        @include padding(rem(50) null null null);
+        max-width: 70%;
+
+        font-size: rem(16);
+        line-height: rem(19);
+      }
+
+      @include breakpoint('large') {
+        max-width: 60%;
+
+        font-size: rem(50);
+        line-height: rem(52);
       }
     }
   }

@@ -36,7 +36,7 @@
   }
 
   @else if $point == "large" {
-    @media (min-width: 769px) { @content; }
+    @media (min-width: 1024px) { @content; }
   }
 
   @else if $point == "extra-large" {

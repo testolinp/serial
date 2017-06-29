@@ -2,10 +2,25 @@
   <div class="hd__content">
     <div class="hd__lg"></div>
     <div class="hd__hamb" {{action 'openCloseOverlay'}}></div>
+    <nav class="hd__nav">
+      <ul class="hd__nav__list">
+        <li class="hd__nav__list__item"><a href="#">About</a></li>
+        <li class="hd__nav__list__item"><a href="#">Work</a></li>
+        <li class="hd__nav__list__item"><a href="#">Services</a></li>
+        <li class="hd__nav__list__item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 {{outlet}}
+
+<footer class="footer">
+  <div class="footer__lg"></div>
+  <a href="#" class="footer__lang">ES</a>
+  <div class="footer__line"></div>
+  <div class="footer__line footer__line--2"></div>
+</footer>
 
 <div class="overlay {{if showOverlay 'overlay--show' ''}}">
   <a href="#" class="overlay__close" {{action 'openCloseOverlay'}}></a>

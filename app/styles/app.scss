@@ -15,6 +15,7 @@
 
 //Components
 @import "components/header";
+@import "components/footer";
 @import "components/overlay";
 
 html, body {
@@ -31,5 +32,108 @@ html, body {
 
   &--show-out {
     top: -100vh;
+  }
+}
+
+.dots {
+  @include position(fixed, 50% rem(27) null null);
+  @include transform(translateY(-50%));
+  z-index: 100;
+  display: none;
+
+  @include breakpoint('large') {
+    display: block;
+  }
+
+  &__list {
+    &__item {
+      @include padding(null null rem(22));
+
+      a {
+        display: block;
+        @include position(relative, null null null null);
+        @include size(rem(20));
+
+        &:before {
+          @include position(absolute, 50% null null 50%);
+          @include transform(translate(-50%, -50%));
+          content: '';
+          display: block;
+          @include size(rem(4));
+          border-radius: 100%;
+          background: $secondary-color;
+          @include filter(brightness(1));
+          @include transition(all 0.3s ease-in-out 0.3s);
+        }
+      }
+
+      &--active {
+        a {
+          &:before {
+            @include size(rem(8));
+          }
+        }
+      }
+    }
+  }
+
+  &--0 {
+    .dots__list__item {
+      &:nth-child(1) {
+        a {
+          &:before {
+            @include size(rem(8));
+          }
+        }
+      }
+    }
+  }
+
+  &--1 {
+    .dots__list__item {
+      &:nth-child(2) {
+        a {
+          &:before {
+            @include size(rem(8));
+          }
+        }
+      }
+
+      a {
+        &:before {
+          @include filter(brightness(0));
+        }
+      }
+    }
+  }
+
+  &--2 {
+    .dots__list__item {
+      &:nth-child(3) {
+        a {
+          &:before {
+            @include size(rem(8));
+          }
+        }
+      }
+    }
+  }
+
+  &--3 {
+    .dots__list__item {
+      &:nth-child(4) {
+        a {
+          &:before {
+            @include size(rem(8));
+          }
+        }
+      }
+
+      a {
+        &:before {
+          @include filter(brightness(0));
+        }
+      }
+    }
   }
 }
