@@ -25,9 +25,13 @@
 
     @include breakpoint('large') {
       top: rem(160);
-      left: rem(430);
+      left: rem(220);
       bottom: inherit;
       @include padding(0 0 null);
+    }
+
+    @include breakpoint('super-extra-large') {
+      left: rem(410);
     }
 
     &__title {
@@ -46,6 +50,14 @@
 
       @include breakpoint('large') {
         max-width: 60%;
+        font-size: rem(40);
+        line-height: rem(41);
+      }
+
+      @include breakpoint('super-extra-large') {
+        max-width: 60%;
+        font-size: rem(50);
+        line-height: rem(51);
       }
     }
 
@@ -68,9 +80,26 @@
       @include breakpoint('large') {
         max-width: 60%;
 
-        font-size: rem(50);
-        line-height: rem(52);
+        font-size: rem(30);
+        line-height: rem(32);
+      }
+
+      @include breakpoint('super-extra-large') {
+        max-width: 50%;
+
+        font-size: rem(35);
+        line-height: rem(37);
       }
     }
+  }
+
+  ::-moz-selection {
+    color: $main-color;
+    background: $secondary-color;
+  }
+
+  ::selection {
+    color: $main-color;
+    background: $secondary-color;
   }
 }

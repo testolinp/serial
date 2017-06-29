@@ -21,6 +21,10 @@
     @include transition(all 0.3s ease-in-out 0.3s);
 
     @include breakpoint('large') {
+      @include size(rem(170) rem(60));
+    }
+
+    @include breakpoint('super-extra-large') {
       @include size(rem(280) rem(100));
     }
   }
@@ -42,10 +46,14 @@
   &__nav {
     display: none;
     float: left;
-    @include padding(rem(10) null null rem(120));
+    @include padding(rem(10) null null rem(100));
 
     @include breakpoint('large') {
       display: block;
+    }
+
+    @include breakpoint('super-extra-large') {
+      left: rem(120);
     }
 
     &__list {

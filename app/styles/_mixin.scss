@@ -40,11 +40,11 @@
   }
 
   @else if $point == "extra-large" {
-    @media (min-width: 1720px) { @content; }
+    @media (min-width: 1200px) { @content; }
   }
 
   @else if $point == "super-extra-large" {
-    @media (min-width: 1900px) { @content; }
+    @media (min-width: 1400px) { @content; }
   }
 
   @else {

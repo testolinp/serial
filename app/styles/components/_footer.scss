@@ -11,7 +11,7 @@
   }
 
   &__line {
-    @include position(absolute, null null rem(1) rem(435));
+    @include position(absolute, null null rem(1) rem(415));
     @include size(rem(40) rem(1));
     background: $secondary-color;
     @include filter(brightness(1));

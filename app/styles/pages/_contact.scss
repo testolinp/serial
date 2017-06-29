@@ -6,8 +6,19 @@
 
   &__content {
     @include position(absolute, 0 null null 0);
-    @include size(100% auto);
+    @include size(100% 100%);
     @include padding(rem(140) rem(20) null);
+
+    @include breakpoint('large') {
+      top: rem(160);
+      left: rem(220);
+      @include transform(translateY(0));
+      @include padding(0 0 null);
+    }
+
+    @include breakpoint('super-extra-large') {
+      left: rem(410);
+    }
 
     &__title {
       @include padding(null null rem(35));
@@ -23,8 +34,27 @@
         line-height: rem(44);
       }
 
-      &:last-child {
-        padding-bottom: 0;
+      @include breakpoint('medium') {
+        max-width: 70%;
+
+        font-size: rem(50);
+        line-height: rem(51);
+      }
+
+      @include breakpoint('large') {
+        max-width: 60%;
+        font-size: rem(40);
+        line-height: rem(41);
+      }
+
+      @include breakpoint('super-extra-large') {
+        max-width: 60%;
+        font-size: rem(50);
+        line-height: rem(51);
+      }
+
+      &:first-child {
+        padding-bottom: rem(5);
       }
 
       a {
@@ -33,6 +63,34 @@
         line-height: rem(30);
         color: $main-color;
         text-decoration: underline;
+
+        @include breakpoint('small-extra') {
+          font-size: rem(40);
+          line-height: rem(44);
+        }
+
+        @include breakpoint('medium') {
+          font-size: rem(50);
+          line-height: rem(51);
+        }
+
+        @include breakpoint('large') {
+          font-size: rem(40);
+          line-height: rem(41);
+        }
+
+        @include breakpoint('super-extra-large') {
+          font-size: rem(50);
+          line-height: rem(51);
+        }
+      }
+
+      span {
+        display: block;
+
+        @include breakpoint('medium') {
+          display: inline-block;
+        }
       }
     }
   }
@@ -50,12 +108,69 @@
       @include padding(rem(50) null null null);
     }
 
+    @include breakpoint('medium') {
+      @include position(static, null null inherit inherit);
+      @include padding(rem(50) null null 0);
+      max-width: 70%;
+
+      font-size: rem(16);
+      line-height: rem(19);
+    }
+
+    @include breakpoint('large') {
+      max-width: 60%;
+
+      font-size: rem(30);
+      line-height: rem(32);
+    }
+
+    @include breakpoint('super-extra-large') {
+      max-width: 50%;
+
+      font-size: rem(35);
+      line-height: rem(37);
+    }
+
     a {
       font-family: $gotham-light;
       font-size: rem(14);
       line-height: rem(17);
       color: $main-color;
       text-decoration: underline;
+
+      @include breakpoint('large') {
+        font-size: rem(30);
+        line-height: rem(32);
+        text-decoration: none;
+      }
+
+      @include breakpoint('super-extra-large') {
+        @include position(relative, null null null null);
+        font-size: rem(35);
+        line-height: rem(37);
+      }
+
+      &:before {
+        content: '';
+        display: none;
+        @include size(100% rem(1));
+        @include position(absolute, null null 0 0);
+        background: $main-color;
+
+        @include breakpoint('super-extra-large') {
+          display: block;
+        }
+      }
     }
+  }
+
+  ::-moz-selection {
+    color: $secondary-color;
+    background: $main-color;
+  }
+
+  ::selection {
+    color: $secondary-color;
+    background: $main-color;
   }
 }
