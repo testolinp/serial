@@ -9,25 +9,39 @@
     @include size(100% 100%);
     @include padding(rem(140) rem(20) null);
 
+    @include breakpoint('small-extra') {
+      left: rem(10);
+    }
+
     @include breakpoint('large') {
       top: rem(160);
-      left: rem(220);
+      left: rem(372);
       @include transform(translateY(0));
       @include padding(0 0 null);
     }
 
-    @include breakpoint('super-extra-large') {
-      left: rem(410);
+    &__wrapper {
+      @include position(absolute, null null rem(90) rem(20));
+
+      @include breakpoint('small-extra') {
+        bottom: rem(120);
+      }
+
+      @include breakpoint('large') {
+        @include position(relative, null null inherit 0);
+      }
     }
 
     &__title {
-      @include padding(null null rem(35));
+      @include padding(rem(30) null null);
 
       font-family: $gotham-medium;
-      font-size: rem(30);
-      line-height: rem(30);
+      font-size: rem(36);
+      line-height: rem(33);
       color: $main-color;
       word-wrap: break-word;
+      letter-spacing: rem(-2);
+      -webkit-font-smoothing: antialiased;
 
       @include breakpoint('small-extra') {
         font-size: rem(40);
@@ -35,22 +49,15 @@
       }
 
       @include breakpoint('medium') {
-        max-width: 70%;
-
         font-size: rem(50);
         line-height: rem(51);
       }
 
       @include breakpoint('large') {
-        max-width: 60%;
+        @include padding(rem(10) null null);
         font-size: rem(40);
-        line-height: rem(41);
-      }
-
-      @include breakpoint('super-extra-large') {
-        max-width: 60%;
-        font-size: rem(50);
-        line-height: rem(51);
+        line-height: rem(42);
+        letter-spacing: 0;
       }
 
       &:first-child {
@@ -58,11 +65,11 @@
       }
 
       a {
+        @include position(relative, null null null null);
         font-family: $gotham-medium;
-        font-size: rem(30);
-        line-height: rem(30);
+        font-size: rem(36);
+        line-height: rem(33);
         color: $main-color;
-        text-decoration: underline;
 
         @include breakpoint('small-extra') {
           font-size: rem(40);
@@ -79,9 +86,12 @@
           line-height: rem(41);
         }
 
-        @include breakpoint('super-extra-large') {
-          font-size: rem(50);
-          line-height: rem(51);
+        &:before {
+          content: '';
+          display: block;
+          @include size(100% rem(1));
+          @include position(absolute, null null rem(3) 0);
+          background: $main-color;
         }
       }
 
@@ -90,6 +100,14 @@
 
         @include breakpoint('medium') {
           display: inline-block;
+        }
+      }
+
+      small {
+        letter-spacing: rem(-4);
+
+        @include breakpoint('large') {
+          letter-spacing: rem(-6);
         }
       }
     }
@@ -105,61 +123,56 @@
     color: $main-color;
 
     @include breakpoint('small-extra') {
-      @include padding(rem(50) null null null);
+      @include padding(rem(50) null);
+
+      font-size: rem(15);
+      line-height: rem(18);
     }
 
     @include breakpoint('medium') {
       @include position(static, null null inherit inherit);
       @include padding(rem(50) null null 0);
-      max-width: 70%;
 
       font-size: rem(16);
       line-height: rem(19);
     }
 
     @include breakpoint('large') {
-      max-width: 60%;
+      @include padding(rem(100) null 0 0);
 
-      font-size: rem(30);
-      line-height: rem(32);
-    }
-
-    @include breakpoint('super-extra-large') {
-      max-width: 50%;
-
-      font-size: rem(35);
-      line-height: rem(37);
+      font-size: rem(46);
+      line-height: rem(50);
     }
 
     a {
+      @include position(relative, null null null null);
       font-family: $gotham-light;
       font-size: rem(14);
       line-height: rem(17);
       color: $main-color;
-      text-decoration: underline;
 
       @include breakpoint('large') {
-        font-size: rem(30);
-        line-height: rem(32);
-        text-decoration: none;
-      }
-
-      @include breakpoint('super-extra-large') {
-        @include position(relative, null null null null);
-        font-size: rem(35);
-        line-height: rem(37);
+        font-size: rem(40);
+        line-height: rem(42);
+        letter-spacing: 0;
       }
 
       &:before {
         content: '';
-        display: none;
+        display: block;
         @include size(100% rem(1));
         @include position(absolute, null null 0 0);
         background: $main-color;
 
-        @include breakpoint('super-extra-large') {
-          display: block;
+        @include breakpoint('large') {
+          display: none;
         }
+      }
+    }
+
+    span {
+      @include breakpoint('large') {
+        font-size: rem(20);
       }
     }
   }

@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
     nextSlide() {
       if(this.get('slide.index') >= this.get('slide.total')) { return; }
 
+      Ember.$('body').removeClass();
       Ember.$('.hd').removeClass().addClass('hd');
       Ember.$('.footer').removeClass().addClass('footer');
       Ember.$('.dots').removeClass().addClass('dots');
@@ -23,6 +24,7 @@ export default Ember.Controller.extend({
       Ember.$('.hd').addClass('hd--' + this.get('slide.index'));
       Ember.$('.footer').addClass('footer--' + this.get('slide.index'));
       Ember.$('.dots').addClass('dots--' + this.get('slide.index'));
+      Ember.$('body').addClass('body--' + this.get('slide.index'));
 
       // Ember.$('.home__dots li').removeClass('home__dots__item--active');
       // Ember.$('.home__dots li').eq(this.get('slide.index')).addClass('home__dots__item--active');
@@ -31,6 +33,7 @@ export default Ember.Controller.extend({
     prevSlide() {
       if(this.get('slide.index') <= 0) { return; }
 
+      Ember.$('body').removeClass();
       Ember.$('.hd').removeClass().addClass('hd');
       Ember.$('.footer').removeClass().addClass('footer');
       Ember.$('.dots').removeClass().addClass('dots');
@@ -43,6 +46,7 @@ export default Ember.Controller.extend({
       Ember.$('.hd').addClass('hd--' + this.get('slide.index'));
       Ember.$('.footer').addClass('footer--' + this.get('slide.index'));
       Ember.$('.dots').addClass('dots--' + this.get('slide.index'));
+      Ember.$('body').addClass('body--' + this.get('slide.index'));
       // Ember.$('.home__dots li').removeClass('home__dots__item--active');
       // Ember.$('.home__dots li').eq(this.get('slide.index')).addClass('home__dots__item--active');
     },
@@ -54,6 +58,7 @@ export default Ember.Controller.extend({
       Ember.$('.hd').removeClass().addClass('hd');
       Ember.$('.footer').removeClass().addClass('footer');
       Ember.$('.dots').removeClass().addClass('dots');
+      Ember.$('body').removeClass().addClass('body--' + this.get('slide.index'));
 
       //console.log('index',this.get('slide.index'),index);
       if(this.get('slide.index') === index) { return; }

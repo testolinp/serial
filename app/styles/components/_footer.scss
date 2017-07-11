@@ -1,6 +1,6 @@
 .footer {
   display: none;
-  @include position(fixed, null null rem(40) 0);
+  @include position(fixed, null null rem(30) 0);
   z-index: 100;
   @include size(100% auto);
   @include padding(rem(20) rem(35) null);
@@ -11,20 +11,20 @@
   }
 
   &__line {
-    @include position(absolute, null null rem(1) rem(415));
+    @include position(absolute, null null rem(1) rem(370));
     @include size(rem(40) rem(1));
     background: $secondary-color;
     @include filter(brightness(1));
     @include transition(all 0.3s ease-in-out 0.3s);
 
     &--2 {
-      left: rem(900);
+      left: rem(810);
     }
   }
 
   &__lg {
     float: left;
-    @include size(rem(83) rem(42));
+    @include size(rem(63) rem(32));
     background: url('/images/ft-text.png') 0 0 no-repeat;
     background-size: contain;
     @include filter(brightness(1));
@@ -33,12 +33,12 @@
 
   &__lang {
     float: right;
-    @include position(relative, rem(28) null null null);
+    @include position(fixed, rem(25) rem(30) null null);
     @include filter(brightness(1));
     @include transition(all 0.3s ease-in-out 0.3s);
 
     font-family: $gotham-medium;
-    font-size: rem(14);
+    font-size: rem(12);
     color: $secondary-color;
     text-transform: uppercase;
     text-decoration: underline;

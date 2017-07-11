@@ -7,6 +7,10 @@
     @include clearfix;
     @include padding(rem(13) rem(20) null);
 
+    @include breakpoint('small-extra') {
+      @include padding(rem(23) rem(30) null);
+    }
+
     @include breakpoint('large') {
       @include padding(rem(20) rem(35) null);
     }
@@ -14,25 +18,25 @@
 
   &__lg {
     float: left;
-    @include size(rem(100) rem(35));
+    @include size(rem(90) rem(35));
     background: url('/images/lg.png') center center no-repeat;
     background-size: contain;
     @include filter(brightness(1));
     @include transition(all 0.3s ease-in-out 0.3s);
 
-    @include breakpoint('large') {
-      @include size(rem(170) rem(60));
+    @include breakpoint('small-extra') {
+      @include size(rem(100) rem(35));
     }
 
-    @include breakpoint('super-extra-large') {
-      @include size(rem(280) rem(100));
+    @include breakpoint('large') {
+      @include size(rem(120) rem(45));
     }
   }
 
   &__hamb {
     float: right;
-    @include position(relative, rem(6) null null null);
-    @include size(rem(25));
+    @include position(relative, rem(8) null null null);
+    @include size(rem(27));
     background: url('/images/hamb.png') center center no-repeat;
     background-size: contain;
     @include filter(brightness(1));
@@ -50,10 +54,8 @@
 
     @include breakpoint('large') {
       display: block;
-    }
-
-    @include breakpoint('super-extra-large') {
-      left: rem(120);
+      padding-top: 0;
+      padding-left: rem(220);
     }
 
     &__list {
@@ -71,6 +73,10 @@
           font-size: rem(13);
           color: $secondary-color;
           text-transform: lowercase;
+
+          @include breakpoint('large') {
+            font-size: rem(11);
+          }
         }
       }
     }

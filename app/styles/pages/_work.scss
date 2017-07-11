@@ -5,31 +5,36 @@
   z-index: 19;
 
   &__content {
-    @include position(absolute, null null rem(130) 0);
+    @include position(absolute, null null rem(80) 0);
     @include size(100% auto);
     @include padding(rem(70) rem(20) null);
 
+    @include breakpoint('small-extra') {
+      @include padding(rem(70) rem(30) null);
+    }
+
     @include breakpoint('large') {
       top: rem(160);
-      left: rem(220);
+      left: rem(372);
       bottom: inherit;
       @include padding(0 0 null);
     }
 
-    @include breakpoint('super-extra-large') {
-      left: rem(410);
-    }
-
     &__title {
       font-family: $gotham-medium;
-      font-size: rem(30);
-      line-height: rem(30);
+      font-size: rem(36);
+      line-height: rem(33);
       color: $main-color;
       word-wrap: break-word;
+      letter-spacing: rem(-2);
+      -webkit-font-smoothing: antialiased;
+      opacity: 0;
+      @include position(relative, rem(20) null null null);
+      @include transition(all 0.4s ease-in-out 1.3s);
 
       @include breakpoint('small-extra') {
         font-size: rem(40);
-        line-height: rem(44);
+        line-height: rem(37);
       }
 
       @include breakpoint('medium') {
@@ -40,50 +45,43 @@
       }
 
       @include breakpoint('large') {
-        max-width: 60%;
         font-size: rem(40);
-        line-height: rem(41);
+        line-height: rem(42);
+        letter-spacing: 0;
       }
 
-      @include breakpoint('super-extra-large') {
-        max-width: 60%;
-        font-size: rem(50);
-        line-height: rem(51);
+      span {
+        letter-spacing: -6px;
       }
     }
 
     &__description {
+      @include position(relative, rem(20) null null null);
       @include padding(rem(30) null null null);
 
       font-family: $gotham-light;
       font-size: rem(14);
       line-height: rem(17);
       color: $main-color;
+      -webkit-font-smoothing: antialiased;
+      opacity: 0;
+      @include transition(all 0.4s ease-in-out 1.5s);
 
       @include breakpoint('small-extra') {
-        @include padding(rem(50) null null null);
+        @include padding(rem(30) null null null);
+
+        font-size: rem(15);
+        line-height: rem(18);
       }
 
       @include breakpoint('medium') {
-        @include padding(rem(50) null null null);
-        max-width: 70%;
-
         font-size: rem(16);
         line-height: rem(19);
       }
 
       @include breakpoint('large') {
-        max-width: 60%;
-
-        font-size: rem(30);
-        line-height: rem(32);
-      }
-
-      @include breakpoint('super-extra-large') {
-        max-width: 50%;
-
-        font-size: rem(35);
-        line-height: rem(37);
+        font-size: rem(40);
+        line-height: rem(40);
       }
     }
   }
@@ -96,5 +94,17 @@
   ::selection {
     color: $secondary-color;
     background: $main-color;
+  }
+
+  &.slide--current {
+    .work__content__title {
+      opacity: 1;
+      top: 0;
+    }
+
+    .work__content__description {
+      opacity: 1;
+      top: 0;
+    }
   }
 }

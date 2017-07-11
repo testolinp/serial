@@ -93,6 +93,9 @@ export default Ember.Route.extend({
   // },
 
   activate() {
+    Ember.run.later(function() {
+      Ember.$('.home').addClass('home--init');
+    }, 100);
     // if(this.get('first')) {
     //   Ember.run.later(function() {
     //     Ember.$('.home').addClass('home--init');

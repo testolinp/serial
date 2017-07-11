@@ -23,8 +23,52 @@ html, body {
   overflow: hidden;
 }
 
+body {
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    display: block;
+    @include position(fixed, null null rem(30) 50%);
+    z-index: 21;
+    @include transform(translateX(-50%));
+    @include size(rem(15));
+    background: url('/images/arrow-down.png') center center no-repeat;
+    background-size: contain;
+    @include transition(all 0.3s ease-in-out 0.3s);
+
+    @include breakpoint('large') {
+      display: none;
+    }
+  }
+
+  &.body--0 {
+    &:before {
+      @include filter(brightness(1));
+    }
+  }
+
+  &.body--1 {
+    &:before {
+      @include filter(brightness(0));
+    }
+  }
+
+  &.body--2 {
+    &:before {
+      @include filter(brightness(1));
+    }
+  }
+
+  &.body--3 {
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
 .slide {
-  @include transition(top 1.2s ease-in-out);
+  @include transition(top 1.5s cubic-bezier(0.42, 0, 0, 1));
 
   &--current {
     height: calc(100vh);
@@ -47,7 +91,7 @@ html, body {
 
   &__list {
     &__item {
-      @include padding(null null rem(22));
+      @include padding(null null rem(12));
 
       a {
         display: block;
@@ -59,7 +103,7 @@ html, body {
           @include transform(translate(-50%, -50%));
           content: '';
           display: block;
-          @include size(rem(4));
+          @include size(rem(3));
           border-radius: 100%;
           background: $secondary-color;
           @include filter(brightness(1));
@@ -82,7 +126,7 @@ html, body {
       &:nth-child(1) {
         a {
           &:before {
-            @include size(rem(8));
+            @include size(rem(6));
           }
         }
       }
@@ -94,7 +138,7 @@ html, body {
       &:nth-child(2) {
         a {
           &:before {
-            @include size(rem(8));
+            @include size(rem(6));
           }
         }
       }
@@ -112,7 +156,7 @@ html, body {
       &:nth-child(3) {
         a {
           &:before {
-            @include size(rem(8));
+            @include size(rem(6));
           }
         }
       }
@@ -124,7 +168,7 @@ html, body {
       &:nth-child(4) {
         a {
           &:before {
-            @include size(rem(8));
+            @include size(rem(6));
           }
         }
       }
@@ -135,5 +179,21 @@ html, body {
         }
       }
     }
+  }
+}
+
+.is-mobile {
+  display: block;
+
+  @include breakpoint('large') {
+    display: none;
+  }
+}
+
+.is-desktop {
+  display: none;
+
+  @include breakpoint('large') {
+    display: block;
   }
 }
