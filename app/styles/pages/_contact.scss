@@ -21,10 +21,15 @@
     }
 
     &__wrapper {
-      @include position(absolute, null null rem(90) rem(20));
+      @include position(absolute, 50% null null rem(20));
+      @include transform(translateY(-50%));
 
       @include breakpoint('small-extra') {
         bottom: rem(120);
+      }
+
+      @include breakpoint('medium') {
+        @include position(relative, 130px null inherit 0);
       }
 
       @include breakpoint('large') {
@@ -42,6 +47,9 @@
       word-wrap: break-word;
       letter-spacing: rem(-2);
       -webkit-font-smoothing: antialiased;
+      opacity: 0;
+      @include position(relative, rem(20) null null null);
+      @include transition(all 0.4s ease-in-out 1.3s);
 
       @include breakpoint('small-extra') {
         font-size: rem(40);
@@ -62,23 +70,40 @@
 
       &:first-child {
         padding-bottom: rem(5);
+
+        @include breakpoint('large') {
+          padding-bottom: rem(15);
+        }
+      }
+
+      &:nth-child(2) {
+        a {
+          &:first-child {
+            &:before {
+              display: none;
+            }
+          }
+        }
       }
 
       a {
         @include position(relative, null null null null);
-        font-family: $gotham-medium;
-        font-size: rem(36);
-        line-height: rem(33);
+        font-family: $gotham-light;
+        font-size: rem(15);
+        line-height: rem(20);
         color: $main-color;
+        display: table;
+        letter-spacing: 0;
 
         @include breakpoint('small-extra') {
-          font-size: rem(40);
-          line-height: rem(44);
+          font-size: rem(15);
+          line-height: rem(17);
+          letter-spacing: 0;
         }
 
         @include breakpoint('medium') {
-          font-size: rem(50);
-          line-height: rem(51);
+          font-size: rem(28);
+          line-height: rem(32);
         }
 
         @include breakpoint('large') {
@@ -90,7 +115,7 @@
           content: '';
           display: block;
           @include size(100% rem(1));
-          @include position(absolute, null null rem(3) 0);
+          @include position(absolute, null null 0 0);
           background: $main-color;
         }
       }
@@ -104,7 +129,7 @@
       }
 
       small {
-        letter-spacing: rem(-4);
+        letter-spacing: rem(-5);
 
         @include breakpoint('large') {
           letter-spacing: rem(-6);
@@ -121,6 +146,9 @@
     font-size: rem(14);
     line-height: rem(17);
     color: $main-color;
+    -webkit-font-smoothing: antialiased;
+    opacity: 0;
+    @include transition(all 0.4s ease-in-out 1.5s);
 
     @include breakpoint('small-extra') {
       @include padding(rem(50) null);
@@ -138,6 +166,7 @@
     }
 
     @include breakpoint('large') {
+      @include position(relative, rem(20) null null 0);
       @include padding(rem(100) null 0 0);
 
       font-size: rem(46);
@@ -185,5 +214,36 @@
   ::selection {
     color: $secondary-color;
     background: $main-color;
+  }
+
+  &.slide--current {
+    .contact__content__title {
+      opacity: 1;
+      top: 0;
+    }
+
+    .contact__content__description {
+      opacity: 1;
+      top: 0;
+    }
+
+    .contact__description {
+      opacity: 1;
+      top: 0;
+    }
+  }
+
+  &.slide--show-out {
+    .contact__content__title {
+      @include transition-delay(0s);
+    }
+
+    .contact__content__description {
+      @include transition-delay(0s);
+    }
+
+    .contact__description {
+      @include transition-delay(0s);
+    }
   }
 }

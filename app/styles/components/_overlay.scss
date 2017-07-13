@@ -14,7 +14,7 @@
 
   &__close {
     display: block;
-    @include position(absolute, rem(19) rem(19) null null);
+    @include position(absolute, rem(32) rem(29) null null);
     @include size(rem(25));
     background: url('/images/close.png') center center no-repeat;
     background-size: rem(18);

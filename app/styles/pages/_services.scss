@@ -45,6 +45,9 @@
       word-wrap: break-word;
       letter-spacing: rem(-2);
       -webkit-font-smoothing: antialiased;
+      opacity: 0;
+      @include position(relative, rem(20) null null null);
+      @include transition(all 0.4s ease-in-out 1.3s);
 
       @include breakpoint('small-extra') {
         font-size: rem(40);
@@ -72,12 +75,16 @@
     }
 
     &__description {
+      @include position(relative, rem(20) null null null);
       @include padding(rem(30) null null null);
 
       font-family: $gotham-light;
       font-size: rem(14);
       line-height: rem(17);
       color: $secondary-color;
+      -webkit-font-smoothing: antialiased;
+      opacity: 0;
+      @include transition(all 0.4s ease-in-out 1.5s);
 
       @include breakpoint('small-extra') {
         @include padding(rem(30) null null null);
@@ -124,5 +131,27 @@
   ::selection {
     color: $main-color;
     background: $secondary-color;
+  }
+
+  &.slide--current {
+    .services__content__title {
+      opacity: 1;
+      top: 0;
+    }
+
+    .services__content__description {
+      opacity: 1;
+      top: 0;
+    }
+  }
+
+  &.slide--show-out {
+    .services__content__title {
+      @include transition-delay(0s);
+    }
+
+    .services__content__description {
+      @include transition-delay(0s);
+    }
   }
 }

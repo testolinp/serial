@@ -29,7 +29,8 @@
       letter-spacing: rem(-2);
       -webkit-font-smoothing: antialiased;
       opacity: 0;
-      @include transition(opacity 0.4s ease-in-out 0.3s);
+      @include position(relative, rem(20) null null null);
+      @include transition(all 0.4s ease-in-out 0.5s);
 
       @include breakpoint('small-extra') {
         font-size: rem(40);
@@ -55,6 +56,7 @@
     }
 
     &__description {
+      @include position(relative, rem(20) null null null);
       @include padding(rem(30) null null null);
 
       font-family: $gotham-light;
@@ -63,7 +65,7 @@
       color: $secondary-color;
       -webkit-font-smoothing: antialiased;
       opacity: 0;
-      @include transition(opacity 0.4s ease-in-out 0.5s);
+      @include transition(all 0.4s ease-in-out 0.7s);
 
       @include breakpoint('small-extra') {
         font-size: rem(15);
@@ -98,10 +100,40 @@
   &.home--init {
     .home__content__title {
       opacity: 1;
+      top: 0;
     }
 
     .home__content__description {
       opacity: 1;
+      top: 0;
+    }
+  }
+
+  &.slide--current {
+    .home__content__title {
+      opacity: 1;
+      top: 0;
+      @include transition-delay(1s);
+    }
+
+    .home__content__description {
+      opacity: 1;
+      top: 0;
+      @include transition-delay(1.2s);
+    }
+  }
+
+  &.slide--show-out {
+    .home__content__title {
+      opacity: 0;
+      top: 50px;
+      @include transition-delay(0.3s);
+    }
+
+    .home__content__description {
+      opacity: 0;
+      top: 20px;
+      @include transition-delay(0.3s);
     }
   }
 }

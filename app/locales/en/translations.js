@@ -37,9 +37,9 @@ export default {
   },
 
   "contact": {
-    "title": "<small>--</small> Got<br>an idea?",
-    "titleDesktop": "<small>--</small> Got an idea?",
-    "title1": "<a href='mailto:hello@serial.studio' target='_blank'>Write us.</a>",
+    "title": "<small>--</small> Get<br>in touch.",
+    "titleDesktop": "<small>--</small> Get<br>in touch.",
+    "title1": "<a href='tel:+54 9 11 2674 6733' target='_blank'>+54 9 11 2674 6733</a><a href='mailto:hello@serial.studio' target='_blank'>hello@serial.studio.</a>",
     "description": "Also follow us on:<br><a href='https://www.instagram.com/serial.studio/' target='_blank'>Instagram</a> &amp; <a href='https://www.facebook.com/studio.serial/' target='_blank'>Facebook</a>",
     "descriptionDesktop": "<span>Also follow us on:</span><br><a href='https://www.instagram.com/serial.studio/' target='_blank'>Instagram</a><br>&amp; <a href='https://www.facebook.com/studio.serial/' target='_blank'>Facebook</a>"
   }

@@ -107,4 +107,14 @@
       top: 0;
     }
   }
+
+  &.slide--show-out {
+    .work__content__title {
+      @include transition-delay(0s);
+    }
+
+    .work__content__description {
+      @include transition-delay(0s);
+    }
+  }
 }
