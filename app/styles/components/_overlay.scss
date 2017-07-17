@@ -39,7 +39,7 @@
   }
 
   &__lang {
-    @include position(absolute, null null rem(40) 50%);
+    @include position(absolute, null null rem(80) 50%);
     @include transform(translateX(-50%));
 
     font-family: $gotham-medium;
