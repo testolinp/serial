@@ -166,8 +166,8 @@
     }
 
     @include breakpoint('large') {
-      @include position(relative, rem(20) null null 0);
-      @include padding(rem(100) null 0 0);
+      @include position(relative, rem(120) null null 0);
+      @include padding(0 null 0 0);
 
       font-size: rem(46);
       line-height: rem(50);
@@ -192,10 +192,6 @@
         @include size(100% rem(1));
         @include position(absolute, null null 0 0);
         background: $main-color;
-
-        @include breakpoint('large') {
-          display: none;
-        }
       }
     }
 
@@ -229,7 +225,11 @@
 
     .contact__description {
       opacity: 1;
-      top: 0;
+      bottom: 0;
+
+      @include breakpoint('large') {
+        top: rem(120);
+      }
     }
   }
 

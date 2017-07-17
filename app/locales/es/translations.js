@@ -39,7 +39,7 @@ export default {
   "contact": {
     "title": "<small>--</small> Ponete<br>en contacto.",
     "titleDesktop": "<small>--</small> Ponete<br>en contacto.",
-    "title1": "<a href='tel:+54 9 11 2674 6733' target='_blank'>+54 9 11 2674 6733</a><a href='mailto:hello@serial.studio' target='_blank'>hello@serial.studio.</a>",
+    "title1": "<a href='tel:+54 9 11 2674 6733' target='_blank'>+54 9 11 2674 6733</a><a href='mailto:hello@serial.studio'>hello@serial.studio</a>",
     "description": "Seguinos en:<br><a href='https://www.instagram.com/serial.studio/' target='_blank'>Instagram</a> &amp; <a href='https://www.facebook.com/studio.serial/' target='_blank'>Facebook</a>",
     "descriptionDesktop": "<span>Seguinos en:</span><br><a href='https://www.instagram.com/serial.studio/' target='_blank'>Instagram</a><br>&amp; <a href='https://www.facebook.com/studio.serial/' target='_blank'>Facebook</a>"
   }

@@ -43,7 +43,7 @@ export default Ember.Controller.extend({
       this.set('slide.index', this.get('slide.index') - 1);
       Ember.$('.slide').eq(this.get('slide.index')).removeClass('slide--show-out').addClass('slide--current');
 
-      Ember.$('.hd').addClass('hd--' + this.get('slide.index'));
+      Ember.$('.hd').addClass('hd--' + this.get('slide.index') + 'down');
       Ember.$('.footer').addClass('footer--' + this.get('slide.index'));
       Ember.$('.dots').addClass('dots--' + this.get('slide.index'));
       Ember.$('body').addClass('body--' + this.get('slide.index'));
