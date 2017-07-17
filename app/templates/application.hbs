@@ -18,9 +18,9 @@
 <footer class="footer">
   <div class="footer__lg"></div>
   {{#if (is-equal currentLocation 'en')}}
-    <a href="/es/" class="footer__lang">{{currentLocation}}</a>
+    <a href="/es/" class="footer__lang">ES</a>
   {{else}}
-    <a href="/" class="footer__lang">{{currentLocation}}</a>
+    <a href="/" class="footer__lang">EN</a>
   {{/if}}
   <div class="footer__line"></div>
   <div class="footer__line footer__line--2"></div>
@@ -35,8 +35,8 @@
     <li class="overlay__list__item"><a href="#" class="overlay__list__item__link" {{action 'menuGoToSlide' 3}}>{{t "menu.contact"}}</a></li>
   </ul>
   {{#if (is-equal currentLocation 'en')}}
-    <a href="/es/" class="overlay__lang">{{currentLocation}}</a>
+    <a href="/es/" class="overlay__lang">ES</a>
   {{else}}
-    <a href="/" class="overlay__lang">{{currentLocation}}</a>
+    <a href="/" class="overlay__lang">EN</a>
   {{/if}}
 </div>
