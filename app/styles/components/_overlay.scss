@@ -37,4 +37,15 @@
       }
     }
   }
+
+  &__lang {
+    @include position(absolute, null null rem(40) 50%);
+    @include transform(translateX(-50%));
+
+    font-family: $gotham-medium;
+    font-size: rem(15);
+    color: $secondary-color;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
 }
