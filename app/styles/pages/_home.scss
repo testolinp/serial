@@ -5,7 +5,7 @@
   z-index: 20;
 
   &__content {
-    @include position(absolute, null null rem(150) 0);
+    @include position(absolute, null null rem(130) 0);
     @include size(100% auto);
     @include padding(rem(70) rem(20) null);
 
@@ -143,16 +143,6 @@
     .home__content {
       padding-top: 0;
       bottom: 180px;
-    }
-
-    &.slide--current {
-      .home__content__title {
-        opacity: 1;
-      }
-
-      .home__content__description {
-        opacity: 1;
-      }
     }
   }
 }
