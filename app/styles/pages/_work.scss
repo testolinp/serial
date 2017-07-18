@@ -22,8 +22,8 @@
 
     &__title {
       font-family: $gotham-medium;
-      font-size: rem(36);
-      line-height: rem(33);
+      font-size: rem(30);
+      line-height: rem(27);
       color: $main-color;
       word-wrap: break-word;
       letter-spacing: rem(-2);
@@ -60,8 +60,8 @@
       @include padding(rem(30) null null null);
 
       font-family: $gotham-light;
-      font-size: rem(14);
-      line-height: rem(17);
+      font-size: rem(13);
+      line-height: rem(16);
       color: $main-color;
       -webkit-font-smoothing: antialiased;
       opacity: 0;

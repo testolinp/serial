@@ -115,6 +115,8 @@ body {
         a {
           &:before {
             @include size(rem(8));
+            overflow: hidden;
+            border-radius: 100%;
           }
         }
       }
@@ -126,7 +128,9 @@ body {
       &:nth-child(1) {
         a {
           &:before {
-            @include size(rem(6));
+            @include size(rem(8));
+            overflow: hidden;
+            border-radius: 100%;
           }
         }
       }
@@ -138,7 +142,9 @@ body {
       &:nth-child(2) {
         a {
           &:before {
-            @include size(rem(6));
+            @include size(rem(8));
+            overflow: hidden;
+            border-radius: 100%;
           }
         }
       }
@@ -156,7 +162,9 @@ body {
       &:nth-child(3) {
         a {
           &:before {
-            @include size(rem(6));
+            @include size(rem(8));
+            overflow: hidden;
+            border-radius: 100%;
           }
         }
       }
@@ -168,7 +176,9 @@ body {
       &:nth-child(4) {
         a {
           &:before {
-            @include size(rem(6));
+            @include size(rem(8));
+            overflow: hidden;
+            border-radius: 100%;
           }
         }
       }
