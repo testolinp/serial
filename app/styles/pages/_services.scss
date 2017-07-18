@@ -11,7 +11,7 @@
     @include padding(rem(70) rem(20) null);
 
     @include breakpoint('small-extra') {
-      @include padding(rem(70) rem(30) null);
+      @include padding(rem(50) rem(30) null);
     }
 
     @include breakpoint('large') {
