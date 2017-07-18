@@ -69,9 +69,12 @@ body {
 
 .slide {
   @include transition(top 1.5s cubic-bezier(0.42, 0, 0, 1));
+  transform: translate3d(0,0,0);
+  -webkit-overflow-scrolling: touch
 
   &--current {
     height: 100vh;
+    transform: translate3d(0,0,0);
   }
 
   &--show-out {

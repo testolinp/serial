@@ -5,13 +5,14 @@
   z-index: 18;
 
   &__content {
-    @include position(absolute, 50% null null 0);
-    @include transform(translateY(-50%));
+    @include position(absolute, null null rem(130) 0);
     @include size(100% auto);
     @include padding(rem(70) rem(20) null);
 
     @include breakpoint('small-extra') {
       @include padding(rem(70) rem(30) null);
+      @include position(absolute, 50% null null 0);
+      @include transform(translateY(-50%));
     }
 
     @include breakpoint('large') {
@@ -26,6 +27,24 @@
 
       @include breakpoint('medium') {
         display: none;
+      }
+
+      .services__content__description {
+        &:nth-child(2) {
+          display: none;
+
+          @include breakpoint('small-landscape') {
+            display: block;
+          }
+        }
+
+        &:nth-child(3) {
+          padding-top: 20px;
+
+          @include breakpoint('small-landscape') {
+            padding-top: 10px;
+          }
+        }
       }
     }
 
