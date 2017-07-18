@@ -139,13 +139,20 @@
 }
 
 .body--0down {
-  .slide--current {
-    .home__content__title {
-      opacity: 1;
+  .home {
+    .home__content {
+      padding-top: 0;
+      bottom: 180px;
     }
 
-    .home__content__description {
-      opacity: 1;
+    &.slide--current {
+      .home__content__title {
+        opacity: 1;
+      }
+
+      .home__content__description {
+        opacity: 1;
+      }
     }
   }
 }
