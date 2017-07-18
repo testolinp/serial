@@ -71,11 +71,11 @@ body {
   @include transition(top 1.5s cubic-bezier(0.42, 0, 0, 1));
 
   &--current {
-    height: calc(100vh);
+    height: 100%;
   }
 
   &--show-out {
-    top: -100vh;
+    top: -100%;
   }
 }
 
