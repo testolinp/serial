@@ -88,6 +88,10 @@
       @include transition-delay(0s);
     }
 
+    .hd__hamb {
+      @include transition-delay(0s);
+    }
+
     .hd__nav__list__item {
       a {
         @include transition-delay(0s);
@@ -97,6 +101,11 @@
 
   &--1down {
     .hd__lg {
+      @include transition-delay(0s);
+      @include filter(brightness(0));
+    }
+
+    .hd__hamb {
       @include transition-delay(0s);
       @include filter(brightness(0));
     }
