@@ -27,24 +27,6 @@
       @include breakpoint('medium') {
         display: none;
       }
-
-      .services__content__description {
-        &:nth-child(2) {
-          display: none;
-
-          @include breakpoint('small-landscape') {
-            display: block;
-          }
-        }
-
-        &:nth-child(3) {
-          padding-top: 20px;
-
-          @include breakpoint('small-landscape') {
-            padding-top: 10px;
-          }
-        }
-      }
     }
 
     &__desktop {
