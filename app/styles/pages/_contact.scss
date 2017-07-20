@@ -139,7 +139,7 @@
   }
 
   &__description {
-    @include position(absolute, null null 0 0);
+    @include position(absolute, null null rem(-100) 0);
     @include padding(null null rem(20) rem(20));
 
     font-family: $gotham-light;
@@ -151,7 +151,7 @@
     @include transition(all 0.4s ease-in-out 1.5s);
 
     @include breakpoint('small-extra') {
-      @include padding(rem(50) null);
+      @include padding(rem(50) null rem(-110));
 
       font-size: rem(15);
       line-height: rem(18);
@@ -225,7 +225,7 @@
 
     .contact__description {
       opacity: 1;
-      bottom: 0;
+      bottom: rem(100);
 
       @include breakpoint('large') {
         top: rem(120);

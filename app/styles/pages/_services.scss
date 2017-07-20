@@ -50,8 +50,8 @@
       @include transition(all 0.4s ease-in-out 1.3s);
 
       @include breakpoint('small-extra') {
-        font-size: rem(40);
-        line-height: rem(37);
+        font-size: rem(38);
+        line-height: rem(35);
       }
 
       @include breakpoint('medium') {
