@@ -15,7 +15,7 @@
 
     @include breakpoint('large') {
       top: rem(160);
-      left: rem(372);
+      left: rem(35);
       @include transform(translateY(0));
       @include padding(0 0 null);
     }

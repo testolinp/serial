@@ -16,10 +16,8 @@ export default {
   },
 
   "home": {
-    "title": "<span>––</span> We’re<br>a creative<br>innovation-led<br>production<br>partner.",
-    "titleDesktop": "<span>––</span> We’re a creative innovation-led<br>production partner.",
-    "description": "A design-driven and solution-focussed production company interested in creating and developing meaningful experiences that can transform brands and their businesses while bringing value to people's lives.",
-    "descriptionDesktop": "A design-driven and solution-focussed<br>production company<br>interested in creating and developing<br>meaningful experiences<br>that can transform brands<br>and their businesses while bringing value<br>to people's lives.",
+    "title": "<span>––</span> We’re a creative<br>innovation-led<br>production partner.",
+    "description": "Website<br>coming soon!",
   },
 
   "work": {

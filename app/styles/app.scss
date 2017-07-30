@@ -19,10 +19,10 @@
 @import "components/overlay";
 
 html, body {
-  @include size(100vw 100%);
+  // @include size(100vw 100%);
   overflow:hidden;
-  -ms-touch-action: none;
-  touch-action: none;
+  // -ms-touch-action: none;
+  // touch-action: none;
 }
 
 body {
