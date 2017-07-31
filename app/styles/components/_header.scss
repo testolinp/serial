@@ -35,7 +35,8 @@
 
   &__hamb {
     float: right;
-    @include position(relative, rem(8) null null null);
+    @include position(fixed, rem(20) rem(20) null null);
+    z-index: 100;
     @include size(rem(27));
     background: url('/images/hamb.png') center center no-repeat;
     background-size: contain;
