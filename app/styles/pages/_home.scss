@@ -1,8 +1,39 @@
 .home {
-  @include position(absolute, 0 null null 0);
-  @include size(100% 100vh);
-  background: $main-color;
-  z-index: 20;
+  @include position(relative, 0 null null 0);
+  // @include size(100% 100vh);
+  //background: $main-color;
+  //z-index: 20;
+
+  &:before {
+    content: '';
+    display: block;
+    @include position(absolute, 50% null null 50%);
+    @include transform(translate(-50%, -50%));
+    @include size(calc(100vw - 80px));
+    background: url('/images/circle.png') center center no-repeat;
+    background-size: contain;
+    opacity: 0;
+    @include transition(all 0.3s ease-in-out);
+
+    @include breakpoint('medium') {
+      @include size(calc(100vw - 180px));
+    }
+
+    @include breakpoint('large') {
+      @include size(rem(600));
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    background: url('/images/dot.png') 0 0 repeat;
+    background-size: rem(20);
+    opacity: 0.2;
+    pointer-events: none;
+  }
 
   &__content {
     @include position(absolute, 50% null null 0);
@@ -11,7 +42,7 @@
     @include padding(0 rem(20) null);
 
     @include breakpoint('small-extra') {
-      @include padding(0 rem(30) null);
+      @include padding(0 rem(20) null);
     }
 
     @include breakpoint('large') {
@@ -22,36 +53,41 @@
 
     &__title {
       font-family: $gotham-medium;
-      font-size: rem(30);
-      line-height: rem(27);
-      color: $secondary-color;
+      font-size: rem(40);
+      line-height: rem(37);
+      color: $main-color;
       word-wrap: break-word;
       letter-spacing: rem(-2);
       -webkit-font-smoothing: antialiased;
       opacity: 0;
       @include position(relative, rem(20) null null null);
-      @include transition(all 0.4s ease-in-out 0.5s);
+      @include transition(all 0.3s ease-in-out);
 
       @include breakpoint('small-extra') {
-        font-size: rem(40);
-        line-height: rem(37);
+        font-size: rem(48);
+        line-height: rem(44);
       }
 
       @include breakpoint('medium') {
-        max-width: 70%;
+        max-width: 100%;
 
-        font-size: rem(50);
-        line-height: rem(51);
+        font-size: rem(90);
+        line-height: rem(75);
+        letter-spacing: rem(-5);
       }
 
       @include breakpoint('large') {
-        font-size: rem(40);
-        line-height: rem(42);
-        letter-spacing: 0;
+        font-size: rem(90);
+        line-height: rem(75);
+        letter-spacing: rem(-5);
       }
 
       span {
         letter-spacing: rem(-6);
+
+        @include breakpoint('medium') {
+          letter-spacing: rem(-10);
+        }
       }
     }
 
@@ -60,82 +96,114 @@
       @include padding(rem(30) null null null);
 
       font-family: $gotham-light;
-      font-size: rem(13);
-      line-height: rem(16);
-      color: $secondary-color;
+      font-size: rem(18);
+      line-height: rem(21);
+      color: $main-color;
       -webkit-font-smoothing: antialiased;
       opacity: 0;
       @include transition(all 0.4s ease-in-out 0.7s);
 
-      @include breakpoint('small-extra') {
-        font-size: rem(15);
-        line-height: rem(18);
-      }
+      // @include breakpoint('small-extra') {
+      //   font-size: rem(15);
+      //   line-height: rem(18);
+      // }
 
       @include breakpoint('medium') {
         @include padding(rem(50) null null null);
-        max-width: 70%;
 
-        font-size: rem(16);
-        line-height: rem(19);
+        font-size: rem(32);
+        line-height: rem(30);
       }
 
       @include breakpoint('large') {
-        font-size: rem(40);
-        line-height: rem(40);
+        font-size: rem(32);
+        line-height: rem(30);
       }
     }
   }
 
   ::-moz-selection {
-    color: $main-color;
-    background: $secondary-color;
+    color: $secondary-color;
+    background: $main-color;
   }
 
   ::selection {
-    color: $main-color;
-    background: $secondary-color;
+    color: $secondary-color;
+    background: $main-color;
   }
 
-  &.home--init {
-    .home__content__title {
-      opacity: 1;
-      top: 0;
-    }
-
-    .home__content__description {
-      opacity: 1;
-      top: 0;
-    }
-  }
-
-  &.slide--current {
-    .home__content__title {
-      opacity: 1;
-      top: 0;
-      @include transition-delay(1s);
-    }
-
-    .home__content__description {
-      opacity: 1;
-      top: 0;
-      @include transition-delay(1.2s);
-    }
-  }
-
-  &.slide--show-out {
+  &.home--start {
     .home__content__title {
       opacity: 0;
-      top: 50px;
-      @include transition-delay(0.3s);
     }
 
     .home__content__description {
       opacity: 0;
-      top: 20px;
-      @include transition-delay(0.3s);
     }
   }
+
+  // &.home--init {
+  //   .home__content__title {
+  //     opacity: 1;
+  //     top: 0;
+  //     @include transition-delay(1s);
+  //
+  //     @include breakpoint('large') {
+  //       @include transition-delay(0.6s);
+  //     }
+  //   }
+  //
+  //   .home__content__description {
+  //     opacity: 1;
+  //     top: 0;
+  //     @include transition-delay(1.5s);
+  //
+  //     @include breakpoint('large') {
+  //       @include transition-delay(0.8s);
+  //     }
+  //   }
+  // }
+
+  &.active {
+    &:before {
+      opacity: 1;
+      @include transition-delay(0.6s);
+    }
+
+    .home__content__title {
+      opacity: 1;
+      top: 0;
+      @include transition-delay(0.8s);
+
+      @include breakpoint('large') {
+        @include transition-delay(0.6s);
+      }
+    }
+
+    .home__content__description {
+      opacity: 1;
+      top: 0;
+      @include transition-delay(1.3s);
+
+      @include breakpoint('large') {
+        @include transition-delay(0.8s);
+      }
+    }
+  }
+  //
+  // &.slide--show-out {
+  //   .home__content__title {
+  //     opacity: 0;
+  //     top: 50px;
+  //     @include transition-delay(0.3s);
+  //   }
+  //
+  //   .home__content__description {
+  //     opacity: 0;
+  //     top: 20px;
+  //     @include transition-delay(0.3s);
+  //   }
+  // }
 }
 
 // .body--0down {

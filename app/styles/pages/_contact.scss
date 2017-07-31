@@ -1,13 +1,50 @@
 .contact {
-  @include position(absolute, 0 null null 0);
-  @include size(100% 100vh);
+  @include position(relative, 0 null null 0);
+  //@include size(100% 100vh);
   background: $secondary-color;
-  z-index: 17;
+  //z-index: 17;
+
+  &:before {
+    content: '';
+    display: block;
+    @include position(absolute, calc(50% + 38px) null null 50%);
+    @include transform(translate(-50%, -50%));
+    @include size(calc(100vw - 72px));
+    background: url('/images/triangle.png') center center no-repeat;
+    background-size: contain;
+    opacity: 0;
+    @include transition(all 0.3s ease-in-out);
+
+
+    @include breakpoint('small-extra') {
+      top: calc(50% + 40px);
+      @include size(calc(100vw - 110px));
+    }
+
+    @include breakpoint('medium') {
+      @include size(calc(100vw - 380px));
+    }
+
+    @include breakpoint('large') {
+      @include size(rem(600));
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    background: url('/images/dot.png') 0 0 repeat;
+    background-size: rem(20);
+    opacity: 0.2;
+    pointer-events: none;
+  }
 
   &__content {
     @include position(absolute, 0 null null 0);
     @include size(100% 100%);
-    @include padding(rem(140) rem(20) null);
+    @include padding(rem(120) rem(20) null);
 
     @include breakpoint('small-extra') {
       left: rem(10);
@@ -21,12 +58,12 @@
     }
 
     &__wrapper {
-      @include position(absolute, 50% null null rem(20));
+      @include position(absolute, calc(50% - 20px) null null rem(20));
       @include transform(translateY(-50%));
 
-      @include breakpoint('small-extra') {
-        bottom: rem(120);
-      }
+      // @include breakpoint('small-extra') {
+      //   bottom: rem(120);
+      // }
 
       @include breakpoint('medium') {
         @include position(relative, 130px null inherit 0);
@@ -41,31 +78,33 @@
       @include padding(rem(30) null null);
 
       font-family: $gotham-medium;
-      font-size: rem(30);
-      line-height: rem(27);
+      font-size: rem(40);
+      line-height: rem(37);
       color: $main-color;
       word-wrap: break-word;
       letter-spacing: rem(-2);
       -webkit-font-smoothing: antialiased;
       opacity: 0;
       @include position(relative, rem(20) null null null);
-      @include transition(all 0.4s ease-in-out 1.3s);
+      @include transition(all 0.3s ease-in-out);
 
       @include breakpoint('small-extra') {
-        font-size: rem(40);
+        font-size: rem(48);
         line-height: rem(44);
       }
 
       @include breakpoint('medium') {
-        font-size: rem(50);
-        line-height: rem(51);
+        font-size: rem(90);
+        line-height: rem(75);
+        letter-spacing: rem(-5);
       }
 
       @include breakpoint('large') {
         @include padding(rem(10) null null);
-        font-size: rem(40);
-        line-height: rem(42);
-        letter-spacing: 0;
+
+        font-size: rem(90);
+        line-height: rem(75);
+        letter-spacing: rem(-5);
       }
 
       &:first-child {
@@ -89,15 +128,15 @@
       a {
         @include position(relative, null null null null);
         font-family: $gotham-light;
-        font-size: rem(15);
-        line-height: rem(20);
+        font-size: rem(18);
+        line-height: rem(21);
         color: $main-color;
         display: table;
         letter-spacing: 0;
 
         @include breakpoint('small-extra') {
-          font-size: rem(15);
-          line-height: rem(17);
+          // font-size: rem(15);
+          // line-height: rem(17);
           letter-spacing: 0;
         }
 
@@ -107,8 +146,8 @@
         }
 
         @include breakpoint('large') {
-          font-size: rem(40);
-          line-height: rem(41);
+          font-size: rem(28);
+          line-height: rem(32);
         }
 
         &:before {
@@ -121,18 +160,11 @@
       }
 
       span {
-        display: block;
+        letter-spacing: rem(-6);
+        display: inline-block;
 
         @include breakpoint('medium') {
-          display: inline-block;
-        }
-      }
-
-      small {
-        letter-spacing: rem(-5);
-
-        @include breakpoint('large') {
-          letter-spacing: rem(-6);
+          letter-spacing: rem(-10);
         }
       }
     }
@@ -143,18 +175,18 @@
     @include padding(null null rem(20) rem(20));
 
     font-family: $gotham-light;
-    font-size: rem(13);
-    line-height: rem(16);
+    font-size: rem(18);
+    line-height: rem(21);
     color: $main-color;
     -webkit-font-smoothing: antialiased;
-    opacity: 0;
+    opacity: 1;
     @include transition(all 0.4s ease-in-out 1.5s);
 
     @include breakpoint('small-extra') {
       @include padding(rem(50) null rem(-110));
 
-      font-size: rem(15);
-      line-height: rem(18);
+      // font-size: rem(15);
+      // line-height: rem(18);
     }
 
     @include breakpoint('medium') {
@@ -169,8 +201,8 @@
       @include position(relative, rem(120) null null 0);
       @include padding(0 null 0 0);
 
-      font-size: rem(46);
-      line-height: rem(50);
+      font-size: rem(16);
+      line-height: rem(19);
     }
 
     a {
@@ -212,38 +244,56 @@
     background: $main-color;
   }
 
-  &.slide--current {
+  &.active {
+    &:before {
+      opacity: 1;
+      @include transition-delay(0.6s);
+    }
+
     .contact__content__title {
       opacity: 1;
       top: 0;
-    }
-
-    .contact__content__description {
-      opacity: 1;
-      top: 0;
-    }
-
-    .contact__description {
-      opacity: 1;
-      bottom: rem(100);
+      @include transition-delay(0.8s);
 
       @include breakpoint('large') {
-        top: rem(120);
+        @include transition-delay(0.6s);
+      }
+
+      &:nth-child(2) {
+        @include transition-delay(1.3s);
+
+        @include breakpoint('large') {
+          @include transition-delay(0.8s);
+        }
       }
     }
+
+    // .contact__content__description {
+    //   opacity: 1;
+    //   top: 0;
+    // }
+    //
+    // .contact__description {
+    //   opacity: 1;
+    //   bottom: rem(100);
+    //
+    //   @include breakpoint('large') {
+    //     top: rem(120);
+    //   }
+    // }
   }
 
-  &.slide--show-out {
-    .contact__content__title {
-      @include transition-delay(0s);
-    }
-
-    .contact__content__description {
-      @include transition-delay(0s);
-    }
-
-    .contact__description {
-      @include transition-delay(0s);
-    }
-  }
+  // &.slide--show-out {
+  //   .contact__content__title {
+  //     @include transition-delay(0s);
+  //   }
+  //
+  //   .contact__content__description {
+  //     @include transition-delay(0s);
+  //   }
+  //
+  //   .contact__description {
+  //     @include transition-delay(0s);
+  //   }
+  // }
 }

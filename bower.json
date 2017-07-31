@@ -1,6 +1,7 @@
 {
   "name": "serial",
   "dependencies": {
-    "bourbon": "4.2.6"
+    "bourbon": "4.2.6",
+    "fullpage.js": "^2.7.8"
   }
 }

@@ -14,7 +14,7 @@
 
   &__close {
     display: block;
-    @include position(absolute, rem(32) rem(29) null null);
+    @include position(absolute, rem(21) rem(20) null null);
     @include size(rem(25));
     background: url('/images/close.png') center center no-repeat;
     background-size: rem(18);
@@ -39,6 +39,7 @@
   }
 
   &__lang {
+    display: none;
     @include position(absolute, null null rem(100) 50%);
     @include transform(translateX(-50%));
 

@@ -94,8 +94,12 @@ export default Ember.Route.extend({
 
   activate() {
     Ember.run.later(function() {
-      Ember.$('.home').addClass('home--init');
+      Ember.$('.home').addClass('home--start');
     }, 100);
+
+    Ember.run.later(function() {
+      Ember.$('.home').addClass('home--init');
+    }, 200);
     // if(this.get('first')) {
     //   Ember.run.later(function() {
     //     Ember.$('.home').addClass('home--init');
@@ -109,12 +113,12 @@ export default Ember.Route.extend({
     //   }, 200);
     // }
 
-    this.set('eventWheel', 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll');
-
-    window.addEventListener(this.get('eventWheel'), this.get('boundHandleScroll'), false);
-    window.addEventListener("touchstart", this.get('boundHandleStart'), false);
-    window.addEventListener("touchend", this.get('boundHandleEnd'), false);
-    window.addEventListener("touchmove", this.get('boundHandleMove'), false);
+    // this.set('eventWheel', 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll');
+    //
+    // window.addEventListener(this.get('eventWheel'), this.get('boundHandleScroll'), false);
+    // window.addEventListener("touchstart", this.get('boundHandleStart'), false);
+    // window.addEventListener("touchend", this.get('boundHandleEnd'), false);
+    // window.addEventListener("touchmove", this.get('boundHandleMove'), false);
 
   },
 

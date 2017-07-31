@@ -1,37 +1,49 @@
 .footer {
-  display: none;
   @include position(fixed, null null rem(30) 0);
   z-index: 100;
   @include size(100% auto);
-  @include padding(rem(20) rem(35) null);
+  @include padding(rem(20) rem(20) null);
   @include clearfix;
+  opacity: 0;
+  @include transition(opacity 0.3s ease-in-out);
 
   @include breakpoint('large') {
-    display: block;
+    opacity: 1;
+    @include padding(rem(20) rem(35) null);
   }
 
-  &__line {
-    @include position(absolute, null null rem(1) rem(370));
-    @include size(rem(40) rem(1));
-    background: $secondary-color;
-    @include filter(brightness(1));
-    @include transition(all 0.3s ease-in-out 0.3s);
-
-    &--2 {
-      left: rem(810);
-    }
-  }
+  // &__line {
+  //   @include position(absolute, null null rem(1) rem(370));
+  //   @include size(rem(40) rem(1));
+  //   background: $secondary-color;
+  //   @include filter(brightness(1));
+  //   @include transition(all 0.3s ease-in-out 0.3s);
+  //
+  //   &--2 {
+  //     left: rem(810);
+  //   }
+  // }
 
   &__lg {
     float: left;
-    @include size(rem(63) rem(32));
-    background: url('/images/ft-text.png') 0 0 no-repeat;
-    background-size: contain;
-    @include filter(brightness(1));
-    @include transition(all 0.3s ease-in-out 0.3s);
+    // @include size(rem(63) rem(32));
+    // background: url('/images/ft-text.png') 0 0 no-repeat;
+    // background-size: contain;
+    // @include filter(brightness(0));
+    // @include transition(all 0.3s ease-in-out 0.3s);
+
+    font-family: $gotham-bold;
+    font-size: rem(11);
+    color: $main-color;
+
+    @include breakpoint('large') {
+      float: right;
+      text-align: right;
+    }
   }
 
   &__lang {
+    display: none;
     float: right;
     @include position(fixed, rem(25) rem(30) null null);
     @include filter(brightness(1));
@@ -39,23 +51,23 @@
 
     font-family: $gotham-medium;
     font-size: rem(12);
-    color: $secondary-color;
+    color: $main-color;
     text-transform: uppercase;
     text-decoration: underline;
   }
 
-  &--1,
-  &--3 {
-    .footer__line {
-      @include filter(brightness(0));
-    }
-
-    .footer__lg {
-      @include filter(brightness(0));
-    }
-
-    .footer__lang {
-      @include filter(brightness(0));
-    }
-  }
+  // &--1,
+  // &--3 {
+  //   .footer__line {
+  //     @include filter(brightness(0));
+  //   }
+  //
+  //   .footer__lg {
+  //     @include filter(brightness(0));
+  //   }
+  //
+  //   .footer__lang {
+  //     @include filter(brightness(0));
+  //   }
+  // }
 }

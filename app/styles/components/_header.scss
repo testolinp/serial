@@ -8,7 +8,7 @@
     @include padding(rem(13) rem(20) null);
 
     @include breakpoint('small-extra') {
-      @include padding(rem(23) rem(30) null);
+      @include padding(rem(13) rem(20) null);
     }
 
     @include breakpoint('large') {
@@ -21,15 +21,15 @@
     @include size(rem(90) rem(35));
     background: url('/images/lg.png') center center no-repeat;
     background-size: contain;
-    @include filter(brightness(1));
-    @include transition(all 0.3s ease-in-out 0.7s);
+    @include filter(brightness(0));
+    // @include transition(all 0.3s ease-in-out 0.7s);
 
     @include breakpoint('small-extra') {
       @include size(rem(100) rem(35));
     }
 
     @include breakpoint('large') {
-      @include size(rem(120) rem(45));
+      @include size(rem(90) rem(35));
     }
   }
 
@@ -39,8 +39,8 @@
     @include size(rem(27));
     background: url('/images/hamb.png') center center no-repeat;
     background-size: contain;
-    @include filter(brightness(1));
-    @include transition(all 0.3s ease-in-out 0.7s);
+    @include filter(brightness(0));
+    // @include transition(all 0.3s ease-in-out 0.7s);
 
     @include breakpoint('large') {
       display: none;
@@ -66,7 +66,7 @@
         @include padding(null rem(110) null null);
 
         a {
-          @include filter(brightness(1));
+          @include filter(brightness(0));
           @include transition(all 0.3s ease-in-out 0.7s);
 
           font-family: $gotham-medium;
@@ -81,54 +81,54 @@
       }
     }
   }
-
-  &--0down,
-  &--2down {
-    .hd__lg {
-      @include transition-delay(0s);
-    }
-
-    .hd__hamb {
-      @include transition-delay(0s);
-    }
-
-    .hd__nav__list__item {
-      a {
-        @include transition-delay(0s);
-      }
-    }
-  }
-
-  &--1down {
-    .hd__lg {
-      @include transition-delay(0s);
-      @include filter(brightness(0));
-    }
-
-    .hd__hamb {
-      @include transition-delay(0s);
-      @include filter(brightness(0));
-    }
-
-    .hd__nav__list__item {
-      a {
-        @include transition-delay(0s);
-        @include filter(brightness(0));
-      }
-    }
-  }
-
-  &--1,
-  &--3 {
-    .hd__lg,
-    .hd__hamb {
-      @include filter(brightness(0));
-    }
-
-    .hd__nav__list__item {
-      a {
-        @include filter(brightness(0));
-      }
-    }
-  }
+  //
+  // &--0down,
+  // &--2down {
+  //   .hd__lg {
+  //     @include transition-delay(0s);
+  //   }
+  //
+  //   .hd__hamb {
+  //     @include transition-delay(0s);
+  //   }
+  //
+  //   .hd__nav__list__item {
+  //     a {
+  //       @include transition-delay(0s);
+  //     }
+  //   }
+  // }
+  //
+  // &--1down {
+  //   .hd__lg {
+  //     @include transition-delay(0s);
+  //     @include filter(brightness(0));
+  //   }
+  //
+  //   .hd__hamb {
+  //     @include transition-delay(0s);
+  //     @include filter(brightness(0));
+  //   }
+  //
+  //   .hd__nav__list__item {
+  //     a {
+  //       @include transition-delay(0s);
+  //       @include filter(brightness(0));
+  //     }
+  //   }
+  // }
+  //
+  // &--1,
+  // &--3 {
+  //   .hd__lg,
+  //   .hd__hamb {
+  //     @include filter(brightness(0));
+  //   }
+  //
+  //   .hd__nav__list__item {
+  //     a {
+  //       @include filter(brightness(0));
+  //     }
+  //   }
+  // }
 }

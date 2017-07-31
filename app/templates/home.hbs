@@ -1,11 +1,12 @@
-<section class="home slide">
+{{#full-page autoScrolling='true' navigation='true' fitToSection='true' anchors='["about", "contact"]' autoScrolling='true' sectionsColor='["#e9e9e9", "#e9e9e9"]' showActiveTooltip='false'}}
+<section class="home section">
   <div class="home__content">
     <h3 class="home__content__title">{{t "home.title"}}</h3>
     <p class="home__content__description">{{t "home.description"}}</p>
   </div>
 </section>
 
-<!-- <section class="work slide">
+<!-- <section class="work section">
   <div class="work__content">
     <h3 class="work__content__title is-mobile">{{t "work.title"}}</h3>
     <h3 class="work__content__title is-desktop">{{t "work.titleDesktop"}}</h3>
@@ -13,7 +14,7 @@
   </div>
 </section>
 
-<section class="services slide">
+<section class="services section">
   <div class="services__content">
     <div class="services__content__mobile">
       <h3 class="services__content__title">{{t "services.title"}}</h3>
@@ -27,21 +28,22 @@
   </div>
 </section> -->
 
-<section class="contact slide">
+<section class="contact section">
   <div class="contact__content">
     <div class="contact__content__wrapper">
       <h3 class="contact__content__title">{{t "contact.title"}}</h3>
       <h3 class="contact__content__title">{{t "contact.title1"}}</h3>
     </div>
-    <p class="contact__description is-mobile">{{t "contact.description"}}</p>
-    <p class="contact__description is-desktop">{{t "contact.descriptionDesktop"}}</p>
+    <!-- <p class="contact__description is-mobile">{{t "contact.description"}}</p>
+    <p class="contact__description is-desktop">{{t "contact.descriptionDesktop"}}</p> -->
   </div>
 </section>
+{{/full-page}}
 
 <div class="dots">
   <ul class="dots__list">
-    <li class="dots__list__item dots__list__item--active"><a href="#" {{action 'goToSlide' 0}}></a></li>
-    <li class="dots__list__item"><a href="#" {{action 'goToSlide' 1}}></a></li>
+    <li class="dots__list__item dots__list__item--active"><a href="#"></a></li>
+    <li class="dots__list__item"><a href="#"></a></li>
     <!-- <li class="dots__list__item"><a href="#" {{action 'goToSlide' 2}}></a></li>
     <li class="dots__list__item"><a href="#" {{action 'goToSlide' 3}}></a></li> -->
   </ul>

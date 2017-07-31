@@ -20,13 +20,25 @@
 
 html, body {
   // @include size(100vw 100%);
+  height: 100%;
   overflow:hidden;
   // -ms-touch-action: none;
   // touch-action: none;
 }
 
 body {
-  overflow: hidden;
+  &.fp-viewing-contact {
+    &:before {
+      opacity: 0;
+    }
+  }
+
+  &.fp-viewing-contact {
+    .footer {
+      opacity: 1;
+      @include transition-delay(0.5s);
+    }
+  }
 
   &:before {
     content: '';
@@ -37,10 +49,12 @@ body {
     @include size(rem(15));
     background: url('/images/arrow-down.png') center center no-repeat;
     background-size: contain;
+    opacity: 1;
+    @include filter(brightness(0));
     @include transition(all 0.3s ease-in-out 0.3s);
 
     @include breakpoint('large') {
-      display: none;
+      opacity: 0;
     }
   }
 
@@ -81,6 +95,54 @@ body {
     top: -100vh;
   }
 }
+#fp-nav {
+  display: none;
+
+  &.right {
+    right: rem(24);
+  }
+
+  @include breakpoint('medium') {
+    display: block;
+  }
+
+  ul {
+    li {
+      .fp-tooltip {
+        display: none;
+      }
+
+      a {
+        span {
+          background: $main-color;
+        }
+
+        &.active {
+          span {
+            @include size(rem(8));
+            @include margin(-4px 0 0 -4px);
+          }
+        }
+      }
+
+      &:hover {
+        a {
+          span {
+            @include size(rem(8));
+            @include margin(-4px 0 0 -4px);
+          }
+
+          &.active {
+            span {
+              @include size(rem(8));
+              @include margin(-4px 0 0 -4px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .dots {
   @include position(fixed, 50% rem(27) null null);
@@ -89,7 +151,7 @@ body {
   display: none;
 
   @include breakpoint('large') {
-    display: block;
+    display: none;
   }
 
   &__list {
