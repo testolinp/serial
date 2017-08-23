@@ -33,6 +33,9 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-102746400-1'
+    };
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -52,7 +55,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-102746400-1'
+    };
   }
 
   return ENV;
